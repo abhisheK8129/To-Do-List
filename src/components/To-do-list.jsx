@@ -27,7 +27,7 @@ export const ToDoList = () => {
   }
 
   function toAddTheTask() {
-    if (newTask.trim() !== "") {
+    if (newTask.trim() !== "" && newTask.length > 4) {
       setTask((t) => [...t, newTask]);
       setNewTask("");
     }
@@ -37,6 +37,9 @@ export const ToDoList = () => {
     const toDeleteTask = tasks.filter((ele, i) => i !== index);
     setTask(toDeleteTask);
   }
+
+
+
 
   function isTaskCompleted() {
     setCompleted((prev) => !prev);
